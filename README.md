@@ -2,11 +2,12 @@
 # FreeRTOS Project
 
 ## Overview
-This project demonstrates a simple FreeRTOS setup with a periodic task printing "Hello, FreeRTOS!" every 3 seconds.
+
+This project demonstrates a simple FreeRTOS Kernel running on top of a Linux Base image. This could be used to quickly get the dev container runnning.
 
 ## Project Structure
-ProjectFolder
 
+```
 -   CMakeLists.txt (main)
 -   src
     -   main.c -------------< Start here.
@@ -28,11 +29,7 @@ ProjectFolder
             -   utils (folder)
                 -   wait_for_event.c
                 -   wait_for_event.h
-
-
-
-
-
+```
 
 ## Usage
 To compile and run the project:
@@ -42,15 +39,19 @@ To compile and run the project:
 3. Re-open using the Dev Container extension in VS CODE.
 
 ### Building the Project
+
+```
 mkdir build
 cd build 
 cmake .. 
 cmake --build .
+```
 
 
 ### Running the Executable
-Run the built executable:
-
+```
+./HelloWorld
+```
 
 ## Modifying the FreeRTOS Task
 To modify the FreeRTOS task, open `src/main.c` and edit the `periodicPrintTask` function.
@@ -60,4 +61,8 @@ To modify the FreeRTOS task, open `src/main.c` and edit the `periodicPrintTask` 
 - Adjust the FreeRTOS configuration in `FreeRTOSConfig.h` as needed for your application.
 - For further details on FreeRTOS, refer to the official [FreeRTOS documentation](https://www.freertos.org/).
 
+## Further Support
+
+1. Can be extended for Application Trace.
+2. Documentation and Debugging tools can be added.
 
