@@ -51,6 +51,8 @@ cmake --build .
 ### Running the Executable
 ```
 ./HelloWorld
+
+Or use the custom Keys showing up in the editor. To stop Press Ctrl + C .
 ```
 
 ## Modifying the FreeRTOS Task
