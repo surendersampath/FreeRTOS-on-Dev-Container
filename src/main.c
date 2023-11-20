@@ -30,7 +30,7 @@ int main() {
 
     TaskHandle_t xTaskToNotify;
     // Create a task with priority 1 and stack size 100 words
-    xTaskCreate(receivingTask, "PeriodicPrint", 100, NULL, 1, &xTaskToNotify);
+    xTaskCreate(receivingTask, "Receiving Task", 100, NULL, 1, &xTaskToNotify);
         
     xTaskCreate(sendingTask, "SendingTask", 100, (void *)xTaskToNotify, 1, NULL);
 
