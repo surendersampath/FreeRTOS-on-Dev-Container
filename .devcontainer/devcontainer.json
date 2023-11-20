@@ -2,8 +2,10 @@
     "image": "mcr.microsoft.com/devcontainers/cpp:debian",
   
     "customizations": {
-      "vscode": {
-        // "extensions": ["streetsidesoftware.code-spell-checker"]
+	"vscode": {
+		"extensions": [
+			"seunlanlege.action-buttons"
+		]
       }
     }
   }
