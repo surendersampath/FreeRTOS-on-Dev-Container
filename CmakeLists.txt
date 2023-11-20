@@ -1,0 +1,35 @@
+cmake_minimum_required(VERSION 3.5)
+project(HelloWorld)
+
+set(CMAKE_C_STANDARD 11)
+
+###############################FREERTOS PORT####################################
+
+# Include the FreeRTOS source code
+include_directories(FreeRTOS/include)
+include_directories(FreeRTOS/Source/portable/Posix)
+include_directories(FreeRTOS/Source/portable/Posix/utils)
+
+set(FREERTOS_SOURCES
+    FreeRTOS/croutine.c
+    FreeRTOS/event_groups.c
+    FreeRTOS/list.c
+    FreeRTOS/queue.c
+    FreeRTOS/stream_buffer.c
+    FreeRTOS/tasks.c
+    FreeRTOS/timers.c
+    #Platform Dependencies
+    FreeRTOS/portable/Posix/port.c
+    FreeRTOS/portable/Posix/heap_4.c
+    FreeRTOS/portable/Posix/utils/wait_for_event.c
+)
+
+
+# Add the executable
+add_executable(HelloWorld src/main.c ${FREERTOS_SOURCES})
+
+# Include the necessary directories
+target_include_directories(HelloWorld PUBLIC
+    FreeRTOS/include
+    FreeRTOS/portable/Posix  # Include portable/Posix
+)
